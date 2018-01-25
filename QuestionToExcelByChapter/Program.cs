@@ -126,11 +126,13 @@ namespace QuestionToExcelByChapter
                     {
                         datarow.CreateCell(0).SetCellValue("判断");
                         datarow.CreateCell(2).SetCellValue(answer == 1 ? "正确" : "错误");
+                        datarow.CreateCell(8).SetCellValue(string.Empty);//标准答案
                     }
                     else
                     {//单选题 
                         datarow.CreateCell(0).SetCellValue("单选");
-                        datarow.CreateCell(2).SetCellValue(a);
+                        datarow.CreateCell(2).SetCellValue(a); 
+                        datarow.CreateCell(8).SetCellValue(ArrayAnswer[answer - 1]);//标准答案
                     }
                     datarow.CreateCell(1).SetCellValue(QuestionTitle);//试题内容
                     datarow.CreateCell(3).SetCellValue(b);//选项B
@@ -138,7 +140,7 @@ namespace QuestionToExcelByChapter
                     datarow.CreateCell(5).SetCellValue(d);//选项D
                     datarow.CreateCell(6).SetCellValue(string.Empty);//选项E
                     datarow.CreateCell(7).SetCellValue(string.Empty);//选项F
-                    datarow.CreateCell(8).SetCellValue(ArrayAnswer[answer - 1]);//标准答案
+                    
                     datarow.CreateCell(9).SetCellValue(explain);//答案解析
                     datarow.CreateCell(10).SetCellValue(ArrayDifficult[random.Next(5)]);//难易程度
                 }
