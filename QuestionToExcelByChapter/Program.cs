@@ -29,7 +29,7 @@ namespace QuestionToExcelByChapter
             String connsql = "server=.;database=OnLineTest;integrated security=SSPI"; // 数据库连接字符串,database设置为自己的数据库名，以Windows身份验证
             SqlConnection connection = null;
             //保存文件的路径
-            string path = @"c:\MyDir";
+            string path = @"E:\MyDir";
             //根据path生成保存文件的文件夹
             try
             {
