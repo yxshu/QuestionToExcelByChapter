@@ -24,7 +24,7 @@ namespace QuestionToExcelByChapter
         {
             
             //sql语句，决定了我们要的数据
-            string sqlstr = "select s.SubjectName,t.TextBookName,c2.ChapterName,c.ChapterName as nodename,QuestionTitle,AnswerA,AnswerB,AnswerC,AnswerD,CorrectAnswer,Explain,q.Remark from Question as q left join PaperCodes as p on q.PaperCodeId=p.PaperCodeId 	left join Subject as s on p.SubjectId=s.SubjectId left join TextBook as t on q.TextBookId=t.TextBookId	left join Chapter as c on q.ChapterId=c.ChapterId	left join Chapter as c2 on c.ChapterParentNo=c2.ChapterId";
+            string sqlstr = "select s.SubjectName,t.TextBookName,c2.ChapterName,c.ChapterName as nodename,QuestionTitle,AnswerA,AnswerB,AnswerC,AnswerD,CorrectAnswer,Explain,q.Remark from Question as q left join PaperCodes as p on q.PaperCodeId=p.PaperCodeId 	left join Subject as s on p.SubjectId=s.SubjectId left join TextBook as t on q.TextBookId=t.TextBookId	left join Chapter as c on q.ChapterId=c.ChapterId	left join Chapter as c2 on c.ChapterParentNo=c2.ChapterId order by p.PaperCodeId,t.TextBookId,c.ChapterId,c.ChapterParentNo";
             //数据库连接字符串
             String connsql = "server=.;database=OnLineTest;integrated security=SSPI"; // 数据库连接字符串,database设置为自己的数据库名，以Windows身份验证
             SqlConnection connection = null;
